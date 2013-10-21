@@ -1,0 +1,78 @@
+#pinterest-widget { 
+	position: relative; 
+	overflow: auto;  
+}
+
+#pinterest-widget, #pin-cycler, #pin-cycler li, .pin-img{
+	width: 100%;
+}
+#pinterest-widget{
+	overflow: hidden;
+}
+#pin-cycler{
+	position: relative;
+	overflow: auto;
+}
+#pinterest-widget ul, #pinterest-widget ol { padding: 0; margin: 0;}
+#pinterest-widget li { list-style: none; }
+#pinterest-widget ul li { float: left;}
+.pin-desc{
+    margin: 0px;
+    padding-top: 10px;
+}
+
+#pinterest-widget ol.dots{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+#pinterest-widget ol.dots li{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 6px 0 0;
+    text-indent: -9999px;
+    background: #999999;
+    
+}
+#pinterest-widget ol.dots li.active{
+    background: #666666;
+}
+
+
+a.pin-user-link:link{
+    display: block;	 
+}
+a.pin-user-link:visited{
+	/* color: #E9E9E9; */
+}
+
+img.pin-icon{
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+/*
+	height: 20px;
+	width: 20px;
+*/
+	float: left;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+
+.pin-date{
+	font-size: 12px;
+	font-style: italic;
+}
+
+.repin-icon{
+	display: block;
+	float: right;
+	margin: 5px 0px 3px 0px;
+}
+.repin-icon img{
+	width: 16px;
+	opacity: 0.4;
+}
