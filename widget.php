@@ -50,6 +50,12 @@ class GV_Pinfeed_Widget extends WP_Widget{
 	        wp_enqueue_style( 'gv-pinfeed-plugin-default-style' );
         }
         
+        if($instance['pin_slider'] == "yes"){
+	        wp_enqueue_script('jquery-latest');
+	        wp_enqueue_script('unslider');
+	        wp_enqueue_script('pin-widget-js');
+        }
+        
 
 
         
@@ -95,6 +101,8 @@ class GV_Pinfeed_Widget extends WP_Widget{
             $instance['pin_board'] = '';
         if( !isset( $instance['pin_style'] ) )
             $instance['pin_style'] = 'no';
+        if( !isset( $instance['pin_slider'] ) )
+            $instance['pin_slider'] = 'no';
            
 
         ?>
@@ -109,6 +117,10 @@ class GV_Pinfeed_Widget extends WP_Widget{
         
         <label for="<?php echo $this->get_field_id('pin_style'); ?>">
             <p><?php _e('Pinterest style', 'gv_pinfeed'); ?>: <input style="width: 100%;" type="checkbox" value="yes" <?php if($instance['pin_style'] == "yes"){ echo "checked='checked'"; } ?> name="<?php echo $this->get_field_name('pin_style'); ?>" id="<?php echo $this->get_field_id('pin_style'); ?>"></p>
+        </label>
+        
+        <label for="<?php echo $this->get_field_id('pin_slider'); ?>">
+            <p><?php _e('Slider', 'gv_pinfeed'); ?>: <input style="width: 100%;" type="checkbox" value="yes" <?php if($instance['pin_slider'] == "yes"){ echo "checked='checked'"; } ?> name="<?php echo $this->get_field_name('pin_slider'); ?>" id="<?php echo $this->get_field_id('pin_slider'); ?>"></p>
         </label>
 
  
@@ -131,6 +143,7 @@ class GV_Pinfeed_Widget extends WP_Widget{
         $instance['pin_board'] = wp_filter_nohtml_kses( $new_instance['pin_board'] );
         $instance['pin_user'] = wp_filter_nohtml_kses( $new_instance['pin_user'] );
         $instance['pin_style'] = wp_filter_nohtml_kses( $new_instance['pin_style'] );
+        $instance['pin_slider'] = wp_filter_nohtml_kses( $new_instance['pin_slider'] );
 
         
         // Check 'count' is numeric.

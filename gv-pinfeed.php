@@ -63,6 +63,12 @@ if ( ! function_exists('gv_pinfeed_plugin_scripts') ):
         // Queues the main CSS file.
         wp_register_style( 'gv-pinfeed-plugin', GV_PINFEED_PLUGIN_URL . 'pin.css', array(), GV_PINFEED_PLUGIN_VERSION, 'all' );
         wp_register_style( 'gv-pinfeed-plugin-default-style', GV_PINFEED_PLUGIN_URL . 'pin-default.css', array(), GV_PINFEED_PLUGIN_VERSION, 'all' );
+        
+        // Queues the js to make the slider happen
+        wp_register_script( 'jquery-latest', '//code.jquery.com/jquery-latest.min.js', array(), null, false );
+        wp_register_script( 'unslider', '//unslider.com/unslider.min.js', array(), null, false );
+        wp_register_script( 'pin-widget-js', '/wp-content/plugins/GVPinfeed/pin.js', array(), null, false );
+
 
         // Enqueue Stylesheet for Admin Pages
         if (is_admin())

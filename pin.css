@@ -15,12 +15,14 @@
 }
 #pinterest-widget ul, #pinterest-widget ol { padding: 0; margin: 0;}
 #pinterest-widget li { list-style: none; }
-#pinterest-widget ul li { float: left;}
+#pinterest-widget ul li { float: left; padding: 0px;}
 .pin-desc{
     margin: 0px;
     padding-top: 10px;
+    padding-bottom: 15px !important;
 }
 
+/*
 #pinterest-widget ol.dots{
     position: absolute;
     bottom: 0px;
@@ -41,6 +43,7 @@
 #pinterest-widget ol.dots li.active{
     background: #666666;
 }
+*/
 
 
 a.pin-user-link:link{
