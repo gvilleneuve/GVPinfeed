@@ -1,18 +1,20 @@
 <?php 
-
+ 
  require_once("GVPinfeed.php");
  $pinfeed = new GVPinfeed;
  if(isset($instance) && function_exists("is_page")){ // check if it's Wordpress or not
 	 $pinAccount = $instance['pin_user'];
 	 $pinBoard = ($instance['pin_board'] != "")?$instance['pin_board']:false;
+	 $howMany = $instance['pin_count'];
 	 $wp = true;
  }else{
 	 $pinAccount = "pinterest"; //set your own account name here if implementing this widget outside wordpress
 	 $pinBoard = "";
+	 $howMany = 3;
 	 $wp = false;
  }
  
- $pins = $pinfeed->get_pins_for_user($pinAccount, $pinBoard, 3);
+ $pins = $pinfeed->get_pins_for_user($pinAccount, $pinBoard, (int)$howMany);
  $pinuser = $pinfeed->get_user_info($pinAccount);
 
  //print_r($pins);
@@ -37,14 +39,16 @@ if(!$wp){
 								<img class="pin-img" src="<?php echo $pin['image_236']; ?>" />
 							</a>
 							<p class="pin-desc" >
-								<?php echo $pin['text']; ?>
+								
 								<span class="repin-icon" >
 									<a data-pin-do="buttonPin" data-pin-config="beside" href="//www.pinterest.com/pin/create/button/?url=<?php echo urlencode($pin['link']); ?>&media=<?php echo  urlencode($pin['image_236']); ?>&description=<?php echo urlencode(strip_tags($pin['description'])); ?>" target="_blank" >
-									<img class="repin-icon" src="/wp-content/plugins/GVPinfeed/images/pin-icon-28.png" />
+										<img class="repin-icon" src="/wp-content/plugins/GVPinfeed/images/pin-icon-28.png" />
 									</a>
+									
 								</span>
+								<?php echo $pin['text']; ?>
 							</p>
-							
+							<div style="clear:both;"></div>
 							
 							<a class="pin-user-link" target="_blank"  href="http://www.pinterest.com/<?php print $pinusername; ?>/">
 								<div class="pin-user-info">

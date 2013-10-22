@@ -73,7 +73,7 @@ img.pin-icon{
 .repin-icon{
 	display: block;
 	float: right;
-	margin: 5px 0px 3px 0px;
+	margin: 0px 0px 5px 5px;
 }
 .repin-icon img{
 	width: 16px;
