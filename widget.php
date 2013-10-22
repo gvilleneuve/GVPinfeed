@@ -64,15 +64,17 @@ class GV_Pinfeed_Widget extends WP_Widget{
             $instance['pinterest_user'] = '';
         
         // Output opening Widget HTML
-        echo $before_widget;
+        if($instance['pin_style'] != "yes") echo $before_widget;
         
         // If Title is set, output it with Widget title opening and closing HTML
-        if ( isset($instance['title'] ) && ! empty( $instance['title'] ) ) {
-
-            echo $before_title;
-            echo $instance['title'];
-            echo $after_title;
-            
+        if($instance['pin_style'] != "yes"){
+	        if ( isset($instance['title'] ) && ! empty( $instance['title'] ) ) {
+	
+	            echo $before_title;
+	            echo $instance['title'];
+	            echo $after_title;
+	            
+	        }
         }
         
         /*
@@ -81,7 +83,7 @@ class GV_Pinfeed_Widget extends WP_Widget{
 		include("pin-widget.php");
         
         // Output closing Widget HTML
-        echo $after_widget;
+       if($instance['pin_style'] != "yes") echo $after_widget;
         
     }
     
@@ -103,6 +105,8 @@ class GV_Pinfeed_Widget extends WP_Widget{
             $instance['pin_style'] = 'no';
         if( !isset( $instance['pin_slider'] ) )
             $instance['pin_slider'] = 'no';
+        if( !isset( $instance['pin_count'] ) )
+            $instance['pin_count'] = '1';
            
 
         ?>
@@ -113,6 +117,10 @@ class GV_Pinfeed_Widget extends WP_Widget{
         
          <label for="<?php echo $this->get_field_id('pin_board'); ?>">
             <p><?php _e('Board', 'gv_pinfeed'); ?>: <input style="width: 100%;" type="text" value="<?php echo $instance['pin_board']; ?>" name="<?php echo $this->get_field_name('pin_board'); ?>" id="<?php echo $this->get_field_id('pin_board'); ?>"></p>
+        </label>
+        
+        <label for="<?php echo $this->get_field_id('pin_count'); ?>">
+            <p><?php _e('# of pins', 'gv_pinfeed'); ?>: <input style="width: 40px" type="text" value="<?php echo $instance['pin_count']; ?>" name="<?php echo $this->get_field_name('pin_count'); ?>" id="<?php echo $this->get_field_id('pin_count'); ?>"></p>
         </label>
         
         <label for="<?php echo $this->get_field_id('pin_style'); ?>">
@@ -144,6 +152,7 @@ class GV_Pinfeed_Widget extends WP_Widget{
         $instance['pin_user'] = wp_filter_nohtml_kses( $new_instance['pin_user'] );
         $instance['pin_style'] = wp_filter_nohtml_kses( $new_instance['pin_style'] );
         $instance['pin_slider'] = wp_filter_nohtml_kses( $new_instance['pin_slider'] );
+        $instance['pin_count'] = wp_filter_nohtml_kses( $new_instance['pin_count'] );
 
         
         // Check 'count' is numeric.
