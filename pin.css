@@ -22,7 +22,6 @@
     padding-bottom: 15px !important;
 }
 
-/*
 #pinterest-widget ol.dots{
     position: absolute;
     bottom: 0px;
@@ -43,7 +42,6 @@
 #pinterest-widget ol.dots li.active{
     background: #666666;
 }
-*/
 
 
 a.pin-user-link:link{
@@ -61,8 +59,7 @@ img.pin-icon{
 	width: 20px;
 */
 	float: left;
-	margin-right: 5px;
-	margin-top: 4px;
+	margin:4px 5px 5px 0px;
 }
 
 .pin-date{
