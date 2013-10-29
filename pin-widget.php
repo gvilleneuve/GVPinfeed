@@ -9,8 +9,7 @@ if ( $wp ) { // check if it's Wordpress or not
 	$pinAccount = $instance['pin_user'];
 	$pinBoard   = ( $instance['pin_board'] != "" ) ? $instance['pin_board'] : false;
 	$howMany    = $instance['pin_count'];
-}
-else {
+} else {
 	$pinAccount = "pinterest"; //set your own account name here if implementing this widget outside wordpress
 	$pinBoard   = "";
 	$howMany    = 3;

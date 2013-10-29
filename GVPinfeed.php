@@ -38,8 +38,7 @@ class GVPinfeed {
 
 		if ( ! $board ) {
 			$xml_source = file_get_contents( "http://www.pinterest.com/$user/feed.rss" );
-		}
-		else {
+		} else {
 			$xml_source = file_get_contents( "http://www.pinterest.com/$user/$board.rss" );
 		}
 		$x = simplexml_load_string( $xml_source );
@@ -76,8 +75,7 @@ class GVPinfeed {
 				unset( $dom );
 				array_push( $items, $post );
 				$i ++;
-			}
-			else {
+			} else {
 				break;
 			}
 		}
@@ -100,31 +98,25 @@ class GVPinfeed {
 
 		if ( $timeAgoInSeconds < $minute ) {
 			$ago = "less than a minute ago";
-		}
-		elseif ( $timeAgoInSeconds < $hour ) {
+		} elseif ( $timeAgoInSeconds < $hour ) {
 			$minutesAgo = floor( $timeAgoInSeconds / $minute );
 			if ( $minutesAgo > 1 ) {
 				$ago = $minutesAgo . " minutes ago";
-			}
-			else {
+			} else {
 				$ago = $minutesAgo . " minute ago";
 			}
-		}
-		elseif ( $timeAgoInSeconds < $day ) {
+		} elseif ( $timeAgoInSeconds < $day ) {
 			$hoursAgo = floor( $timeAgoInSeconds / $hour );
 			if ( $hoursAgo > 1 ) {
 				$ago = $hoursAgo . " hours ago";
-			}
-			else {
+			} else {
 				$ago = $hoursAgo . " hour ago";
 			}
-		}
-		else {
+		} else {
 			$daysAgo = floor( $timeAgoInSeconds / $day );
 			if ( $daysAgo > 1 ) {
 				$ago = $daysAgo . " days ago";
-			}
-			else {
+			} else {
 				$ago = $daysAgo . " day ago";
 			}
 		}
