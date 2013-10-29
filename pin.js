@@ -1,10 +1,10 @@
-$(function() {
+$(function () {
     $('#pin-cycler').unslider({
-	    speed: 500,               //  The speed to animate each slide (in milliseconds)
-		delay: 6000,              //  The delay between slide animations (in milliseconds)
-		complete: function() {},  //  A function that gets called after every slide animation
-		keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-		dots: false,               //  Display dot navigation
-		fluid: false  
+        speed: 500,               //  The speed to animate each slide (in milliseconds)
+        delay: 6000,              //  The delay between slide animations (in milliseconds)
+        complete: function () { },  //  A function that gets called after every slide animation
+        keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+        dots: false,               //  Display dot navigation
+        fluid: false
     });
 });

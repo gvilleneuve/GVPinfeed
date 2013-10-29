@@ -1,34 +1,53 @@
-#pinterest-widget { 
-	position: relative; 
-	overflow: auto;  
+#pinterest-widget {
+    position: relative;
+    overflow: auto;
 }
 
-#pinterest-widget, #pin-cycler, #pin-cycler li, .pin-img{
-	width: 100%;
+#pinterest-widget,
+#pin-cycler,
+#pin-cycler li,
+.pin-img {
+    width: 100%;
 }
-#pinterest-widget{
-	overflow: hidden;
+
+#pinterest-widget {
+    overflow: hidden;
 }
-#pin-cycler{
-	position: relative;
-	overflow: auto;
+
+#pin-cycler {
+    position: relative;
+    overflow: auto;
 }
-#pinterest-widget ul, #pinterest-widget ol { padding: 0; margin: 0;}
-#pinterest-widget li { list-style: none; }
-#pinterest-widget ul li { float: left; padding: 0px;}
-.pin-desc{
-    margin: 0px;
+
+#pinterest-widget ul,
+#pinterest-widget ol {
+    padding: 0;
+    margin: 0;
+}
+
+#pinterest-widget li {
+    list-style: none;
+}
+
+#pinterest-widget ul li {
+    float: left;
+    padding: 0;
+}
+
+.pin-desc {
+    margin: 0;
     padding-top: 10px;
     padding-bottom: 15px !important;
 }
 
-#pinterest-widget ol.dots{
+#pinterest-widget ol.dots {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     right: 0;
 }
-#pinterest-widget ol.dots li{
+
+#pinterest-widget ol.dots li {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -37,42 +56,40 @@
     margin: 0 6px 0 0;
     text-indent: -9999px;
     background: #999999;
-    
+
 }
-#pinterest-widget ol.dots li.active{
+
+#pinterest-widget ol.dots li.active {
     background: #666666;
 }
 
-
-a.pin-user-link:link{
-    display: block;	 
-}
-a.pin-user-link:visited{
-	/* color: #E9E9E9; */
+a.pin-user-link:link {
+    display: block;
 }
 
-img.pin-icon{
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-/*
-	height: 20px;
-	width: 20px;
-*/
-	float: left;
-	margin:4px 5px 5px 0px;
+a.pin-user-link:visited {
+    /* color: #E9E9E9; */
 }
 
-.pin-date{
-	font-size: 12px;
-	font-style: italic;
+img.pin-icon {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    float: left;
+    margin: 4px 5px 5px 0;
 }
 
-.repin-icon{
-	display: block;
-	float: right;
-	margin: 0px 0px 5px 5px;
+.pin-date {
+    font-size: 12px;
+    font-style: italic;
 }
-.repin-icon img{
-	width: 16px;
-	opacity: 0.4;
+
+.repin-icon {
+    display: block;
+    float: right;
+    margin: 0 0 5px 5px;
+}
+
+.repin-icon img {
+    width: 16px;
+    opacity: 0.4;
 }

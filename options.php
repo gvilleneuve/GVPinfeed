@@ -6,14 +6,12 @@
 function gv_pinfeed_options_init() {
 
     register_setting(
-            'gv_pinfeed_options', // Options group
-            'gv_pinfeed_options' // Database option
+        'gv_pinfeed_options', // Options group
+        'gv_pinfeed_options' // Database option
     );
-    
-  
 }
-add_action('admin_init', 'gv_pinfeed_options_init');
 
+add_action('admin_init', 'gv_pinfeed_options_init');
 
 /**
  * Change the capability required to save the 'gv_pinfeed_options' options group.
@@ -21,8 +19,8 @@ add_action('admin_init', 'gv_pinfeed_options_init');
 function gv_pinfeed_option_capability($capability) {
 
     return 'manage_options';
-    
 }
+
 add_filter('option_page_capability_gv_pinfeed_options', 'gv_pinfeed_option_capability');
 
 /**
@@ -30,7 +28,7 @@ add_filter('option_page_capability_gv_pinfeed_options', 'gv_pinfeed_option_capab
  */
 function gv_pinfeed_get_options() {
 
-    $saved = (array) get_option('gv_pinfeed_options');
+    $saved = (array)get_option('gv_pinfeed_options');
 
     $defaults = apply_filters('gv_pinfeed_get_options', $defaults);
 
@@ -39,8 +37,6 @@ function gv_pinfeed_get_options() {
 
     return $options;
 }
-
-
 
 /**
  * Sanitize and validate form input. Accepts an array, return a sanitized array.

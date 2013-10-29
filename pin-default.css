@@ -1,7 +1,7 @@
 
-#pinterest-widget { 
-  
-	background: #FFFFFF; 
+#pinterest-widget {
+
+	background: #FFFFFF;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	/* border: 1px solid #E2E2E2; */
@@ -17,7 +17,7 @@
     /* font-family: Arial, Helvetica, sans-serif; */
     padding: 10px;
     color: #555555;
-    margin: 0px;
+    margin: 0;
 }
 
 .pin-user-info{
@@ -28,7 +28,7 @@
 
 a.pin-user-link:hover{
  	background: #F3F3F3;
- 	text-decoration: none;	 
+ 	text-decoration: none;
 }
 
 a.pin-user-link:link{
