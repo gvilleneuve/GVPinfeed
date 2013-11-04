@@ -1,37 +1,34 @@
 
-#pinterest-widget { 
-  
-	background: #FFFFFF; 
+#pinterest-widget {
+
+	background: #FFFFFF;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	/* border: 1px solid #E2E2E2; */
-	box-shadow:0 1px 3px 0 rgba(0,0,0,0.33);
-	-moz-box-shadow:0 1px 3px 0 rgba(0,0,0,0.33);
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
 	margin-bottom: 20px;
 	/* width:236px !important; */
 }
 
-.pin-desc{
-    font-size: 12px;
-    /* text-align: center; */
-    /* font-family: Arial, Helvetica, sans-serif; */
-    padding: 10px;
-    color: #555555;
-    margin: 0px;
+.pin-desc {
+	font-size: 12px;
+	padding: 10px;
+	color: #555555;
+	margin: 0;
 }
 
-.pin-user-info{
-    padding: 10px;
-    border-top: 1px solid #E9E9E9;
-   /*  font-style: italic; */
+.pin-user-info {
+	padding: 10px;
+	border-top: 1px solid #E9E9E9;
 }
 
-a.pin-user-link:hover{
- 	background: #F3F3F3;
- 	text-decoration: none;	 
+a.pin-user-link:hover {
+	background: #F3F3F3;
+	text-decoration: none;
 }
 
-a.pin-user-link:link{
-    font-size: 12px;
-    color: #929292;
+a.pin-user-link:link {
+	font-size: 12px;
+	color: #929292;
 }
